@@ -55,3 +55,19 @@ const amIFat2 = null;   // mean nothing
 let something;          // undefined
 console.log(amIFat2);
 console.log(something);
+console.log();
+
+
+// array
+const daysOfWeek = ["mon","tue","wed","thu","fri","sat","sun"];
+console.log(daysOfWeek);
+
+// Get Itme from Array
+console.log("print friday : " + daysOfWeek[4]);
+// Add one more thing to array
+daysOfWeek.push("Lee");
+console.log(daysOfWeek);
+
+const nonense = [1,2,"hello", false, null, true, undefined, "Lee"];
+console.log(nonense);
+console.log();
