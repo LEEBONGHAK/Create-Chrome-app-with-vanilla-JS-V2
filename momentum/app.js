@@ -98,3 +98,37 @@ console.log(player.handsome);
 
 player.color = "red";       // property 추가 방법
 console.log(player.color);
+console.log();
+
+
+// Functions
+function sayHello(name, age) {
+    console.log("Hello! my name is", name, "and I'm", age);
+}
+
+sayHello("Lee", 10);
+sayHello("Kim", 11);
+sayHello("Park", 15);
+console.log();
+
+function plus(a, b) {
+    console.log(a, b);
+    console.log(a + b);
+}
+
+plus();
+/*
+    undefined undefined
+    NaN (==  Not a Number)
+*/
+
+const player2 = {
+    name : "Lee",
+    sayHello : function(personsName) {
+        console.log("Hello", personsName);
+    }
+}
+
+player2.sayHello("Kim");
+console.log();
+
