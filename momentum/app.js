@@ -71,3 +71,30 @@ console.log(daysOfWeek);
 const nonense = [1,2,"hello", false, null, true, undefined, "Lee"];
 console.log(nonense);
 console.log();
+
+
+// Objects
+// before objects
+const playerName = "Lee";
+const playerPoints = 121212;
+const playerHandsome = true;
+const playerFat = "little bit";
+
+// after objects
+const player = {
+    name : "Lee",
+    points:121212,
+    handsome:true,
+    fat: "little bit"
+}
+
+console.log(player.name);
+console.log(player.points);
+console.log(player.handsome);
+console.log(player.fat);
+
+player.handsome = false;        // object의 property를 바꾸는 방법, 그러나 object를 바꾸는 건 안됨(by 'const')
+console.log(player.handsome);
+
+player.color = "red";       // property 추가 방법
+console.log(player.color);
