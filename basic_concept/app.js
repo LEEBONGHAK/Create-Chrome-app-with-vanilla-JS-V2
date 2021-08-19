@@ -131,4 +131,3 @@ const player2 = {
 
 player2.sayHello("Kim");
 console.log();
-
