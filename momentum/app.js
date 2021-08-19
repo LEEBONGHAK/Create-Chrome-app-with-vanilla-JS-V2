@@ -44,3 +44,14 @@ console.log(c);
 console.log("hello " + name);
 console.log();
 
+
+// Booleans - true or false / null
+const amIFat = "true";  // string
+const amIFat1 = true;    // boolean
+
+console.log(amIFat1);
+
+const amIFat2 = null;   // mean nothing
+let something;          // undefined
+console.log(amIFat2);
+console.log(something);
