@@ -131,3 +131,26 @@ const player2 = {
 
 player2.sayHello("Kim");
 console.log();
+
+
+// Recap homework
+const calculation = {
+    plus: function(a, b) {
+        console.log(a+b);
+    },
+    min: function(a, b) {
+        console.log(a-b);
+    },
+    div: function(a, b) {
+        console.log(a/b);
+    },
+    pow: function(a, b) {
+        console.log(a**b);
+    }
+}
+
+calculation.plus(6,2);
+calculation.min(6,2);
+calculation.div(6,2);
+calculation.pow(6,2);
+console.log();
