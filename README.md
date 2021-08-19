@@ -10,6 +10,5 @@ url : https://nomadcoders.co/javascript-for-beginners
 
 
 JS 파일 추가하기
-    - 제일 마지막에 추가
-    - <script src="자바스크립트 파일"></script>
-    - 심플한 이유 : 모든 웹브라우져에는 JavaScript가 설치되어 있음
+ - 제일 마지막에 추가 => <script src="자바스크립트 파일"></script>
+ - 심플한 이유 : 모든 웹브라우져에는 JavaScript가 설치되어 있음
