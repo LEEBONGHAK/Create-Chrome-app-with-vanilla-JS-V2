@@ -175,8 +175,17 @@ console.log(typeof age2);       // type 보는 방법
 console.log(typeof age2, typeof parseInt(age2));       // type 바꾸는 방법
 console.log(isNaN(parseInt(age2)));       // isNaN() : number인지 아닌지 판단 함수 (return boolean)
 
-if (isNaN(parseInt(age2))) {
-    console.log("Please write a number");
+if (isNaN(age2) || age2 < 0) {
+    console.log("Please write a number.");
+} else if (age2 < 18) {
+    console.log("You are too young.");
+} else if (age2 >= 18 && age2 <= 50) {
+    console.log("You can drink.");
+} else if (age2 > 50 && age2 <= 80){
+    console.log("You should exercise.");
+} else if (age2 > 80) {
+    console.log("You can do whatever you want.");
 } else {
-    console.log("Thank you for writing your age.");
+    console.log("Whatever");
 }
+console.log();
