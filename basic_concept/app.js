@@ -154,3 +154,14 @@ calculation.min(6,2);
 calculation.div(6,2);
 calculation.pow(6,2);
 console.log();
+
+
+// return
+const age = 96;
+function calculateKrAge(ageOfForeigner) {
+    return ageOfForeigner + 2;
+}
+
+const krAge = calculateKrAge(age);
+console.log(krAge);
+console.log();
