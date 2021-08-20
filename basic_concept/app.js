@@ -165,3 +165,11 @@ function calculateKrAge(ageOfForeigner) {
 const krAge = calculateKrAge(age);
 console.log(krAge);
 console.log();
+
+
+// Conditionals
+//const age2 = prompt("How old are you?");    // 사용자에게 창을 띄울 수 있게 해줌
+const age2 = "12";
+
+console.log(typeof age2);       // type 보는 방법
+console.log(typeof age2, typeof parseInt(age2));       // type 바꾸는 방법
