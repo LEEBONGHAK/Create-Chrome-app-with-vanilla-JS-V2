@@ -173,3 +173,10 @@ const age2 = "12";
 
 console.log(typeof age2);       // type 보는 방법
 console.log(typeof age2, typeof parseInt(age2));       // type 바꾸는 방법
+console.log(isNaN(parseInt(age2)));       // isNaN() : number인지 아닌지 판단 함수 (return boolean)
+
+if (isNaN(parseInt(age2))) {
+    console.log("Please write a number");
+} else {
+    console.log("Thank you for writing your age.");
+}
