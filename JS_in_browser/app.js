@@ -18,6 +18,17 @@ console.log(hellos2);
 
 function handleGrabClick() {
     console.log("Grab event is happened!");
+    grab.style.color = "blue";
+}
+
+function handleGrabMouseEnter() {
+    grab.innerText = "Mouse is here!"
+}
+
+function handleGrabMouseLeave() {
+    grab.innerText = "Mouse is gone!"
 }
 
 document.addEventListener("click", handleGrabClick);
+grab.addEventListener("mouseenter", handleGrabMouseEnter);
+grab.addEventListener("mouseleave", handleGrabMouseLeave);
