@@ -29,6 +29,29 @@ function handleGrabMouseLeave() {
     grab.innerText = "Mouse is gone!"
 }
 
-document.addEventListener("click", handleGrabClick);
-grab.addEventListener("mouseenter", handleGrabMouseEnter);
+// document.addEventListener("click", handleGrabClick);
+document.onclick = handleGrabClick;     // 위와 같은 효과(다른 표현)
+// grab.addEventListener("mouseenter", handleGrabMouseEnter);
+grab.onmouseenter = handleGrabMouseEnter;   // 위와 같은 효과(다른 표현)
 grab.addEventListener("mouseleave", handleGrabMouseLeave);
+
+function handleWindowResize() {
+    document.body.style.backgroundColor = "tomato";
+}
+
+function handleWindowCopy() {
+    alert("copier!");
+}
+
+function handleWindowOffline() {
+    alert("SOS no WIFI");
+}
+
+function handleWindowOnline() {
+    alert("Connected WIFI");
+}
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
