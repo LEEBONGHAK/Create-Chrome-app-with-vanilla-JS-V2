@@ -4,7 +4,7 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_LS = 'toDos';
 
-const toDos = [];
+let toDos = [];
 
 
 function deleteToDo(event) {     // 버튼을 눌으면 해당 li와 저장된 local storage 데이터를 제거하는 함수
@@ -60,5 +60,6 @@ const savedToDos = localStorage.getItem(TODOS_LS);  // local storage 내용을 �
 
 if (saveToDos !== null) {    // when savedToDos exist in local storage
     const parsedToDos = JSON.parse(savedToDos);  //  parse() : 문자열을 JSON으로 바꿈
-    parsedToDos.forEach((toDo) => console.log(toDo))  // .forEach() : array에 담겨있는 것들 각각에 한번씩 함수를 실행시킴
+    toDos = parsedToDos;        // toDos array가 reset되어 저장된 local storage가 reset되지 않게 방지
+    parsedToDos.forEach(paintToDo)  // .forEach() : array에 담겨있는 것들 각각에 한번씩 함수를 실행시킴
 }
