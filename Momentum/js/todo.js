@@ -10,8 +10,12 @@ let toDos = [];
 function deleteToDo(event) {     // 버튼을 눌으면 해당 li와 저장된 local storage 데이터를 제거하는 함수
     const btn = event.target;   // .target : 'event'에 'target'은 선택한 것이 어떤 HTML을 갖는지 알려줌
     const li = btn.parentElement;  // .parentElement : 부모 tag를 불러옴
-    
-    li.remove()   // .remove() : 해당 tag를 제거
+    li.remove()   // .remove() : 해당 tag를 html에서 제거
+
+    // .filter() : .forEach와 같이 각각의 item들이 실행되게 만드면서 array를 만듬
+    // li에 없는 id인 toDos를 체크 -> 지우고 싶은 li을 제외한 array 생성하여 toDos에 업데이트
+    toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id)); // li.id의 경우 string이기 때문에 parseInt()로 숫자로 변환 
+    saveToDos();    // 업데이트 된 toDos를 local storage에 저장하여 local storage 업데이트
 }
 
 
