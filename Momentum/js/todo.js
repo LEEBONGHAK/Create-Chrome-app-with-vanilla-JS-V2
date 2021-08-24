@@ -25,11 +25,12 @@ function saveToDos() {      // toDos를 local storage에 저장하는 함수
 }
 
 
-function paintToDo(newToDo) {       // submit된 to do를 html에 추가해 보여주는 함수
+function paintToDo(newToDoObj) {       // submit된 to do를 html에 추가해 보여주는 함수
     const li = document.createElement("li");      // html에 쓰일 tag생성
+    li.id = newToDoObj.id;      // object 내 id를 li의 id로써 전달
 
     const span = document.createElement("span");      // html에 쓰일 tag생성 (to do 내용)
-    span.innerText = newToDo;
+    span.innerText = newToDoObj.text;
 
     const button = document.createElement("button");      // html에 쓰일 tag생성 (삭제 버튼)
     button.innerText = "❌";
@@ -47,10 +48,14 @@ function handletoDoSubmit(event) {  // submit event를 다루는 함수
     const newToDo = toDoInput.value;    // input value 저장
     toDoInput.value = "";       // input value reset
     
-    toDos.push(newToDo);    // store input value in toDos array
-    saveToDos();   // store toDos in local storage
+    const newToDoObj = { // 각 to do에 id를 부여하여 object 구성
+        text: newToDo,
+        id: Date.now(),
+    }
+    toDos.push(newToDoObj);    // store input object in toDos array
+    paintToDo(newToDoObj);
 
-    paintToDo(newToDo);
+    saveToDos();   // store toDos in local storage
 }
 
 
@@ -58,7 +63,7 @@ toDoForm.addEventListener("submit", handletoDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_LS);  // local storage 내용을 가져옴
 
-if (saveToDos !== null) {    // when savedToDos exist in local storage
+if (savedToDos !== null) {    // when savedToDos exist in local storage
     const parsedToDos = JSON.parse(savedToDos);  //  parse() : 문자열을 JSON으로 바꿈
     toDos = parsedToDos;        // toDos array가 reset되어 저장된 local storage가 reset되지 않게 방지
     parsedToDos.forEach(paintToDo)  // .forEach() : array에 담겨있는 것들 각각에 한번씩 함수를 실행시킴
