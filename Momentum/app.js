@@ -7,11 +7,22 @@ const HIDDEN_CLASSNAME = "hidden",
 
 function onLoginSubmit(event) {
     event.preventDefault();
-    const username = loginInput.value;
     loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
     localStorage.setItem(USER_LS, username);
-    greeting.innerHTML = `Hello ${username}`;
+    paintGreetings(username);
+}
+
+function paintGreetings(username) {
+    greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
-loginForm.addEventListener("submit", onLoginSubmit);
+const loadUsername = localStorage.getItem(USER_LS);
+
+if (loadUsername == null) {
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+    paintGreetings(loadUsername);
+}
